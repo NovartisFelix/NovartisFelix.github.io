@@ -10,7 +10,6 @@
                "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"]
             } ).then(function(){
                GoogleAuth = gapi.auth2.getAuthInstance();
-               GoogleAuth.isSignedIn.listen(updateSigninStatus);
                var User = GoogleAuth.currentUser.get();
                var isAuthorized = User.hasGrantedScopes("https://www.googleapis.com/auth/blogger");
                console.log(isAuthorized);
