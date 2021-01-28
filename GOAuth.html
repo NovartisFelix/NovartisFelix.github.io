@@ -1,19 +1,15 @@
 <html>
-  <head>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script>
-      function start() {
-        gapi.client.init({
-          'apiKey': 'AIzaSyBxqw65U6P74kT4FBuMFX2cYC9bRo7Sx3o',
-          'discoveryDocs': ['https://www.googleapis.com/auth/blogger'],
-        }).then(function(response) {
-          console.log(response);
-        });
-      };
-      gapi.load('client', start);
-    </script>
-  </head>
-  <body>
-    <div id="results"></div>
-  </body>
+   <head>
+      <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+      <script type="text/javascript">
+         function ClientAuth(){
+            gapi.client.init( { "apiKey" : "AIzaSyBxqw65U6P74kT4FBuMFX2cYC9bRo7Sx3o" , "scope" : "https://www.googleapis.com/auth/blogger" , "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"] } ).then(function(response){
+               console.log(response);
+            });
+         };
+         gapi.load( "client:auth2" , ClientAuth );
+      </script>
+   </head>
+   <body>
+   </body>
 </html>
