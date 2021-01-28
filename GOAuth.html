@@ -7,10 +7,14 @@
                "apiKey" : "AIzaSyBxqw65U6P74kT4FBuMFX2cYC9bRo7Sx3o" ,
                "clientId" : "695962379208-3cckunrtup4m908cm9f3kr69modss3vi.apps.googleusercontent.com" ,
                "scope" : "https://www.googleapis.com/auth/blogger" ,
-               "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"] }
-            ).then(function(response){
-               console.log(response);
-            });
+               "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"]
+            } ).then(function(){
+               GoogleAuth = gapi.auth2.getAuthInstance();
+               GoogleAuth.isSignedIn.listen(updateSigninStatus);
+               var User = GoogleAuth.currentUser.get();
+               var isAuthorized = User.hasGrantedScopes("https://www.googleapis.com/auth/blogger");
+               console.log(isAuthorized);
+            } );
          };
          gapi.load( "client:auth2" , ClientAuth );
       </script>
