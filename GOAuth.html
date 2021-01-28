@@ -3,7 +3,12 @@
       <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
       <script type="text/javascript">
          function ClientAuth(){
-            gapi.client.init( { "apiKey" : "AIzaSyBxqw65U6P74kT4FBuMFX2cYC9bRo7Sx3o" , "scope" : "https://www.googleapis.com/auth/blogger" , "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"] } ).then(function(response){
+            gapi.client.init( {
+               "apiKey" : "AIzaSyBxqw65U6P74kT4FBuMFX2cYC9bRo7Sx3o" ,
+               "clientId" : "695962379208-3cckunrtup4m908cm9f3kr69modss3vi.apps.googleusercontent.com" ,
+               "scope" : "https://www.googleapis.com/auth/blogger" ,
+               "discoveryDocs" : ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"] }
+            ).then(function(response){
                console.log(response);
             });
          };
